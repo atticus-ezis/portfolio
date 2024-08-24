@@ -1,182 +1,256 @@
 /* slide text for hero page */
 
+/* frame for text */
 .hero-text-frame {
-  position: relative; /* creates positioning context for text children */
-  width: 63%;
+  position: relative;
+  width: 63.5%;
   height: 100%; 
   top: 80px;
   left: 0px;
   overflow:hidden;
-  background-color: #f0f0f0;
 }
 
+/* class for each text line */
 .text-line {
   position: absolute; /* maintains position within parent container */
-  width: 100%;
-  transition: right 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  opacity: 1;
+  transition: right 1.5s ease-in-out, opacity 1.5s ease-in-out; /* specify animation */
+  opacity: 0;
   text-align: right;
-  z-index: 1;
+  white-space: nowrap;
+  z-index: 1; /* ensures text element below hover space */
 }
 
 #line1 {
-  top: 20px;
+  top: 0;
   right: 100%;
 }
 
+#line2 {
+  top: 20%;
+  right: -100%;
+}
+
+#line3 {
+  top: 45%;
+  right: -100%;
+}
+
+/* trigger animation */
 .hover-zone {
   position: absolute;
   width: 100%;
-  height: 200px; /* Adjust to match text line height */
-  z-index: 2;
-  cursor: pointer;
+  z-index: 2; 
 }
 
 #hover1 {
-  top: 50px;
+  top: 0;
+  height: 200px;
 }
 
-#hover1:hover + #line1 {
+#hover2 {
+  top: 20%;
+  height: 200px;
+}
+
+#hover3 {
+  top: 45%;
+  height: 200px;
+}
+
+/* trigger animation when hovering */
+#hover1:hover + #line1,
+#hover2:hover + #line2,
+#hover3:hover + #line3 {
   right: 0;
   opacity: 1;
 }
 
 
+/* drop in button  */
 
-
-
-
-
-.left-slide-text,
-.music {
-  align-self: stretch;
-  display: flex;
-}
-.music {
-  margin: 0;
-  width: 218px;
-  position: relative;
-  font-size: inherit;
-  font-weight: 400;
-  font-family: inherit;
-  align-items: flex-end;
+.drop-in-button {
+  position: absolute;
+  bottom: 12%;
+  height: 100px;
+  right: 2%;
+  border-radius: 10px;
+  display: flex; 
+  flex-direction: column; 
+  align-items: center;
   justify-content: center;
+  padding: 9.5px 34px;
+  gap: var(--gap-3xs);
+  font-size: var(--font-size-5xl);
+  cursor: pointer;
+  z-index: 3;
+  transition: background-color 2s ease;
 }
 
-.left-slide-text {
-  position: absolute;
-  top: 50px;
-  right: 0px;
-  opacity: 0;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-  /* flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 28px var(--padding-3xs);
-  box-sizing: border-box; */
+/* animate contents within  */
+.drop-in-container {
+  transition: transform 1s ease;
 }
 
-.left-slide-text-final {
-  position: absolute;
-  top: 50px;
-  right: 0px;
-  /* flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  padding: 28px var(--padding-3xs);
-  box-sizing: border-box; */
-}
-.web-development {
-  margin: 0;
-  height: 80px;
-  width: 760px;
-  position: relative;
-  font-size: inherit;
-  font-weight: 400;
-  font-family: inherit;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  max-width: 100%;
-}
-.line2,
-.right-slide-text {
-  overflow: hidden;
-  display: flex;
-  box-sizing: border-box;
-  max-width: 100%;
-}
-.line2 {
-  width: 884px;
-  margin: 0 !important;
-  position: absolute;
-  top: 10px;
-  left: 815px;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  padding: var(--padding-3xs);
-}
-.right-slide-text {
-  width: 914px;
-  height: 120px;
-  flex-shrink: 0;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: var(--padding-3xs) 0 var(--padding-3xs) var(--padding-xl);
-  position: relative;
-}
-.drop-in,
-.web-development1 {
+/* text  */
+ .drop-in {
   margin: 0;
   position: relative;
   font-size: inherit;
   font-weight: 400;
   font-family: inherit;
-}
-.web-development1 {
-  height: 80px;
-  width: 687px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  max-width: 100%;
-}
-.drop-in {
-  display: inline-block;
   min-width: 105px;
-}
+} 
+
+/* scroll icon */
 .chevrons-down-icon {
   width: 48px;
   height: 48px;
   position: relative;
   overflow: hidden;
   flex-shrink: 0;
+  transition: opacity 1s ease;
 }
-.drop-in-button {
-  margin: 0 !important;
-  position: absolute;
+
+.drop-in-button:hover {
+  background-color: rgba(0, 0, 0, 0.6);
 }
-.drop-in-button {
-  top: 763px;
-  left: 833px;
+
+.drop-in-button:hover .chevrons-down-icon {
+  opacity: 0;
+}
+
+.drop-in-button:hover .drop-in-container {
+  transform: translateY(30%);
+  
+}
+
+
+/* menu  */
+
+.menu-header,
+.navbar,
+.track-list {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 9.5px 34px;
-  gap: var(--gap-3xs);
-  font-size: var(--font-size-5xl);
+  max-width: 100%;
+}
+
+.menu-header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--background-default-default);
+  font-family: var(--font-lexend-exa);
+}
+
+.navbar {
+  align-self: stretch;
+  background-color: rgba(38, 135, 197, 0.7);
+  flex-direction: row;
+  justify-content: space-between;
+  padding: var(--padding-5xs) var(--padding-xl);
+  box-sizing: border-box;
+  gap: var(--gap-xl);
+}
+
+/* left corner - github + home */
+
+.home-github {
+  width: 193px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.white-github-2-icon {
+  height: 41px;
+  width: 41px;
+  position: relative;
+  object-fit: cover;
+  transition: transform .5s ease;
+}
+
+.white-github-2-icon:hover  {
+  transform: scale(1.1);
+  cursor: pointer;
 }
 
 
 
 
+/* track menu  */
 
+.track-list {
+  position: relative;
+  width: 407px;
+  border-radius: var(--br-3xs);
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 19.5px var(--padding-smi);
+  box-sizing: border-box;
+  font-size: var(--single-line-body-base-size);
+  overflow: hidden;
+}
 
+.track-carousel {
+  position: absolute;
+  display: flex;
+  right: -60%;
+  transition: right 1s ease;
+  z-index: 4;
+}
 
+.track-list-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-3xs);
+}
 
+/* animated menu  */
+.track-carousel:hover {
+  right: 0;
+}
+
+/* highligfht text */
+.tracks {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  z-index: 5;
+}
+
+.track {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.track::after {
+  content:'';
+  position:absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: currentColor;
+  transition: transform 0.5s ease;
+  transform: scaleX(0);
+  transform-origin: center;
+}
+
+.track:hover::after {
+  width:100%; 
+  left:0;
+  transform: scaleX(1);
+}
 
 
 
@@ -212,25 +286,15 @@
   align-items: center;
   height: 100%;
 }
-.white-github-2-icon {
-  height: 41px;
-  width: 41px;
-  position: relative;
-  object-fit: cover;
-}
+
 .atticus-ezis {
   text-decoration: none;
   position: relative;
   color: inherit;
 }
-.home-githun {
-  width: 193px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.track-list2 {
+
+
+.track-list-title {
   text-decoration: none;
   position: relative;
   color: inherit;
@@ -243,51 +307,11 @@
   position: relative;
   object-fit: contain;
 }
-.track-list1 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-3xs);
-}
-.track-list {
-  width: 407px;
-  border-radius: var(--br-3xs);
-  flex-direction: row;
-  justify-content: flex-end;
-  padding: 19.5px var(--padding-smi);
-  box-sizing: border-box;
-  font-size: var(--single-line-body-base-size);
-}
-.menu-header,
-.navbar,
-.track-list {
-  display: flex;
-  align-items: center;
-  max-width: 100%;
-}
-.navbar {
-  align-self: stretch;
-  background-color: rgba(38, 135, 197, 0.7);
-  flex-direction: row;
-  justify-content: space-between;
-  padding: var(--padding-5xs) var(--padding-xl);
-  box-sizing: border-box;
-  gap: var(--gap-xl);
-}
-.menu-header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  flex-direction: column;
-  justify-content: flex-start;
-  z-index: 1;
-  text-align: left;
-  font-size: var(--font-size-xl);
-  color: var(--background-default-default);
-  font-family: var(--font-lexend-exa);
-}
+
+
+
+
+
 .intro1,
 .navigation {
   align-self: stretch;
