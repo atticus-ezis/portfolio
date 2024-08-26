@@ -3,6 +3,11 @@ body {
   line-height: normal;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 :root {
   /* fonts */
   --font-lexend-exa: "Lexend Exa";
