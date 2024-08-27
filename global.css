@@ -8,6 +8,10 @@ a {
   color: inherit;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 :root {
   /* fonts */
   --font-lexend-exa: "Lexend Exa";

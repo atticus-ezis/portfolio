@@ -1,38 +1,24 @@
-// document.querySelector('.drop-in-button').addEventListener('click', function(scroll) {
-//     scroll.preventDefault(); // Prevent the default anchor behavior
-//     document.querySelector('#intro').scrollIntoView({ 
-//       behavior: 'smooth' 
-//     });
-//   });
+// intro text-card animation
 
-//   document.addEventListener('DOMContentLoaded', function() {
-//     var projectElement = document.querySelector('.track#projects');
-  
-//     if (projectElement) {
-//       projectElement.addEventListener('click', function(scroll) {
-//         console.log('click is a go')
-//         scroll.preventDefault();
-//         document.querySelector('#projects').scrollIntoView({
-//             behavior:'smooth'
-//         });
 
-  
-        
-//       });
-//     } else {
-//       console.log('Element with ID "projects" not found!');
-//     }
-//   });
+const intro_hover_element = document.querySelector('.intro-container')
+const display_text = document.querySelector('.intro-card')
+const skillbar = document.querySelector('.skillbar img')
 
-//   document.querySelector('.track #projects').addEventListener('click', function(scroll) {
-//     scroll.preventDefault();
-//     var target = document.querySelector('#projects');
-//     var headerOffset = document.querySelector('.menu-header').offsetHeight;
-//     var elementPosition = target.getBoundingClientRect().top;
-//     var offsetPosition = elementPosition + window.scrollY - headerOffset;
+intro_hover_element.addEventListener('mouseenter', function(){
+    display_text.style.opacity = '1'; 
+    display_text.style.left = '20%';
+    skillbar.style.top = '20%';
+    skillbar.style.opacity = '1';
+});
 
-//     window.scrollTo({
-//         top: offsetPosition,
-//         behavior: 'smooth'
-//     });
-// });
+intro_hover_element.addEventListener('mouseleave', function(){
+    display_text.style.opacity = '0';
+    display_text.style.left = '0%';
+    skillbar.style.top = '0%';
+    skillbar.style.opacity = '0';
+
+});
+
+
+

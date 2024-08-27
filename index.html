@@ -17,7 +17,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
     />
   </head>
-  
+
   <body>
     
 
@@ -123,35 +123,47 @@
 
       <!-- intro page -->
       <section class="intro" id="intro-section">
-        <div class="intro-title-wrapper">
-          <div class="intro-title">
-            <div class="intro-wrapper">
-              <h1 class="intro1">Intro</h1>
+
+        <div class="intro-container">
+
+            <div class="intro-title">
+              <div class="intro-wrapper">
+                <h1 class="intro1">Intro</h1>
+              </div>
             </div>
-          </div>
-        </div>
-        <div class="intro-card">
-          <div class="intro-text">
-            <div class="im-a-self-taught-container">
-              <span>
-                <p class="im-atticus">I’m Atticus,</p>
-                <p class="im-atticus">&nbsp;</p>
-                <p class="im-atticus">
-                  I'm Atticus,I’m a self-taught programmer who’s interested in
-                  web-development. My education is largely project-based, so the
-                  purpose of this site is to document and showcase my journey.
-                </p>
-                <p class="im-atticus">&nbsp;</p>
-                <p class="im-atticus">
-                  I started with HTML, CSS, and JavaScript. But have since
-                  branched out into frameworks, like Django, apps like Figma
-                  (used on this site) and Amazon Web Services.
-                </p>
-              </span>
+          
+            
+      
+            <div class="intro-card">
+              <div class="intro-text">
+                <div class="im-a-self-taught-container">
+                  <span>
+                    <p class="im-atticus">Hello,</p>
+                    <p class="im-atticus">&nbsp;</p>
+                    <p class="im-atticus">
+                      I'm Atticus, I’m a self-taught programmer who’s interested in
+                      web-development. My education is largely project-based, so the
+                      purpose of this site is to document and showcase my journey.
+                    </p>
+                    <p class="im-atticus">&nbsp;</p>
+                    <p class="im-atticus">
+                      I started with HTML, CSS, and JavaScript. But have since
+                      branched out into frameworks, like Django, apps like Figma
+                      (used on this site) and Amazon Web Services.
+                    </p>
+                  </span>
+                </div>
+              </div>
             </div>
-          </div>
+
+            <div class="skillbar">
+              <img src="public/skillbar.png" alt="skillbar">
+            </div>
+
+        <!-- end intro-container -->
         </div>
       </section>
+      <!-- end intro section -->
 
 
       <section class="projects" id="projects-section">
@@ -167,16 +179,18 @@
         </div>
         <div class="project-slideshow">
           <div class="project-cards">
-            <div class="blog-card">
+
+            <!-- blog card -->
+            <div class="card-template">
               <img
-                class="blogscreen-icon"
+                class="project-icon"
                 alt=""
                 src="./public/blogscreen@2x.png"
               />
 
               <div class="card-type">
-                <h3 class="blogs-for-the">Blogs for the Criminally Insane</h3>
-                <div class="generic-blog-site-container">
+                <h3 class="project-header">Blogs for the Criminally Insane</h3>
+                <div class="description-container">
                   <span>
                     <span class="generic-blog-site"
                       >Generic blog site to learn the basics of Django. Users
@@ -209,17 +223,17 @@
                   <img
                     class="placeholder-icon"
                     alt=""
-                    src="./public/placeholder@2x.png"
+                    src="./public/django.png"
                   />
 
-                  <img class="aws-icon" alt="" src="./public/aws@2x.png" />
+                  <img class="aws-icon" alt="" src="./public/AWS.png" />
                 </div>
                 <div class="github-button">
                   <div class="container">
                     <img
                       class="github-icon"
                       alt=""
-                      src="./public/github@2x.png"
+                      src="./public/github.png"
                     />
 
                     <div class="github">GitHub</div>
@@ -227,16 +241,19 @@
                 </div>
               </div>
             </div>
-            <div class="lo-fi-card">
+            <!-- end blog card -->
+
+            <!-- lo fi card  -->
+            <div class="card-template">
               <img
-                class="beatsscreen-1-icon"
+                class="project-icon"
                 alt=""
                 src="./public/beatsscreen-1@2x.png"
               />
 
               <div class="card-type">
-                <h3 class="the-mix">The Mix</h3>
-                <div class="a-personal-catalog">
+                <h3 class="project-header">The Mix</h3>
+                <div class="description-container">
                   A personal catalog for my music. Users can shuffle, like and
                   download tracks. Live counters are displayed using a
                   real-time-database in Firebase.
@@ -263,15 +280,18 @@
                 </div>
               </div>
             </div>
-            <div class="ear-card">
+            <!-- end lofi card -->
+
+            <!-- ear card -->
+            <div class="card-template">
               <img
-                class="eardojoscreen-1-icon"
+                class="project-icon"
                 alt=""
                 src="./public/eardojoscreen-1@2x.png"
               />
 
               <div class="card-type">
-                <h3 class="the-mix">The Ear Dojo</h3>
+                <h3 class="project-header">The Ear Dojo</h3>
                 <div class="a-game-designed">
                   A game designed to test interval recognition for musicians.
                   Users are given 10 questions and if they receive a passing
@@ -301,6 +321,7 @@
                 </div>
               </div>
             </div>
+            <!-- ear card -->
           </div>
         </div>
       </section>
