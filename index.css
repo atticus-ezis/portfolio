@@ -176,7 +176,7 @@
 
 
 .navigation {
-  height: 100%;
+  height: 100vh;
   flex-shrink: 0;
   max-width: 100%;
   text-align: center;
@@ -342,6 +342,7 @@ section {
 /* intro section */
 
 .intro {
+  height: 100vh;
   align-self: stretch;
   overflow: hidden;
   flex-shrink: 0;
@@ -457,13 +458,35 @@ section {
 
 /* projects section */
 
-.card-template {
-  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
-  border-radius: var(--br-xl);
-  overflow: hidden;
-  justify-content: flex-start;
+.projects {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+.project-slideshow { 
+
+  width: 100%;
+  display: grid;
+  place-items: center;
+  font-size: var(--font-size-sm);
+  color: var(--color-dimgray-200);
 }
 
+.projects {
+  height: 100vh;
+  align-self: stretch;
+  background-color: #288cca;
+  overflow-y: auto;
+  padding: 90px 44px 88px;
+  box-sizing: border-box;
+  gap: var(--gap-3xs);
+  text-align: left;
+  font-size: var(--font-size-21xl);
+  color: #fffcfc;
+  font-family: var(--font-lexend-exa);
+}
+
+/* website icon */
 .project-icon {
   height: 249px;
   max-width: 100%;
@@ -479,6 +502,8 @@ section {
   background-color: #fffcfc;
   align-items: center;
   box-sizing: border-box;
+
+  
 }
 
 /* title */
@@ -495,23 +520,122 @@ section {
   margin-bottom: 20px;
 }
 
-
-
-
-
-
-
-
-
-
-.the-mix {
-  margin: 0;
-  height: 30px;
-  font-size: var(--font-size-5xl);
-  font-weight: 700;
-  font-family: inherit;
-  align-items: flex-end;
+.project-skills {
+  width: 376px;
+  border-radius: var(--br-3xs);
+  border: 1px solid var(--color-black);
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--padding-9xs) var(--padding-120xl);
+  max-width: 100%;
+  gap: var(--gap-xl);
+  z-index: 2;
 }
+
+/* skill icon */
+.larger-icon,
+.placeholder-icon {
+  position: relative;
+  object-fit: cover;
+  min-height: 28px;
+}
+
+.placeholder-icon {
+  height: 28px;
+  width: 28px;
+}
+
+/* github button icon and skill graphic icon */
+.larger-icon {
+  width: 41px;
+  height: 40px;
+  position: relative;
+  object-fit: cover;
+}
+
+/* github-link */
+.github-button {
+  padding: 10px;
+  color: var(--color-black);
+}
+
+.github-icon {
+  width: 41px;
+  height: 40px;
+  position: relative;
+  object-fit: cover;
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.5s ease-in-out;
+}
+
+.github-icon:hover {
+  transform: scale(1.2);
+}
+
+/* animate card */
+
+.card-template {
+  position: relative;
+  display: inline-block;
+
+
+
+}
+
+.project-icon {
+  z-index: 10;
+  position: relative;
+  cursor:pointer;
+
+  /* shadow styling that causes error */
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
+  border-top-left-radius: var(--br-xl);
+  border-top-right-radius: var(--br-xl);
+
+}
+
+.reveal-container {
+  position:absolute;
+  overflow:hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+.card-type {
+  z-index: 1;
+  position: relative;
+  transform: translateY(-100%);
+  transition: transform 1s ease-in-out;
+
+  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
+  border-bottom-left-radius: var(--br-xl);
+  border-bottom-right-radius: var(--br-xl);
+ 
+}
+
+.project-icon:hover ~ .reveal-container .card-type,
+.reveal-container:hover .card-type {
+  transform: translateY(0%);
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -551,48 +675,12 @@ section {
   width: 94px;
 }
 
-.generic-blog-site {
-  font-weight: 300;
-}
-.create {
-  font-weight: 600;
-}
 
-.aws-icon,
-.placeholder-icon {
-  position: relative;
-  object-fit: cover;
-  min-height: 28px;
-}
-.placeholder-icon {
-  height: 28px;
-  width: 28px;
-}
-.aws-icon {
-  align-self: stretch;
-  width: 38px;
-  max-height: 100%;
-}
-.project-skills {
-  width: 376px;
-  border-radius: var(--br-3xs);
-  border: 1px solid var(--color-black);
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: var(--padding-9xs) var(--padding-120xl);
-  max-width: 100%;
-  gap: var(--gap-xl);
-  z-index: 2;
-}
-.github-icon {
-  width: 41px;
-  height: 40px;
-  position: relative;
-  object-fit: cover;
-}
+
+
+
+
+
 .github {
   align-self: stretch;
   height: 18px;
@@ -615,15 +703,7 @@ section {
   justify-content: center;
   gap: var(--gap-3xs);
 }
-.github-button {
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 0 var(--padding-4xs);
-  flex-shrink: 0;
-  z-index: 3;
-  text-align: center;
-  color: var(--color-black);
-}
+
 .blog-card,
 .card-type {
   display: flex;
@@ -663,49 +743,15 @@ section {
   overflow: hidden;
   object-fit: cover;
 }
-.a-game-designed {
-  height: 90px;
-  letter-spacing: -0.06px;
-  font-weight: 300;
-  color: var(--color-dimgray-100);
-  display: flex;
-  align-items: center;
-  z-index: 1;
-}
-.aws-icon2,
-.placeholder-icon2 {
-  position: relative;
-  flex-shrink: 0;
-  object-fit: cover;
-  min-height: 28px;
-}
-.placeholder-icon2 {
-  height: 28px;
-  width: 28px;
-}
-.aws-icon2 {
-  align-self: stretch;
-  width: 38px;
-  max-height: 100%;
-}
-.ear-card,
-.project-skills2 {
+
+
+.ear-card {
   display: flex;
   align-items: center;
   box-sizing: border-box;
   max-width: 100%;
 }
-.project-skills2 {
-  width: 376px;
-  border-radius: var(--br-3xs);
-  border: 1px solid var(--color-black);
-  overflow-x: auto;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: var(--padding-9xs) var(--padding-86xl);
-  gap: var(--gap-xl);
-  z-index: 2;
-}
+
 .ear-card {
   box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
   border-radius: var(--br-xl);
@@ -714,13 +760,7 @@ section {
   justify-content: flex-start;
   padding: 0 0 389px;
 }
-.project-cards,
-.project-slideshow,
-.projects {
-  align-items: flex-start;
-  justify-content: flex-start;
-  max-width: 100%;
-}
+
 .project-cards {
   width: 1342px;
   display: grid;
@@ -730,29 +770,8 @@ section {
   gap: var(--gap-3xs);
   grid-template-columns: repeat(3, minmax(331px, 1fr));
 }
-.project-slideshow,
-.projects {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: column;
-}
-.project-slideshow {
-  
-  font-size: var(--font-size-sm);
-  color: var(--color-dimgray-200);
-}
-.projects {
-  align-self: stretch;
-  background-color: #288cca;
-  overflow-y: auto;
-  padding: 90px 44px 88px;
-  box-sizing: border-box;
-  gap: var(--gap-3xs);
-  text-align: left;
-  font-size: var(--font-size-21xl);
-  color: #fffcfc;
-  font-family: var(--font-lexend-exa);
-}
+
+
 .contact1 {
   margin: 0;
   align-self: stretch;
@@ -1304,11 +1323,7 @@ section {
   .the-mix {
     font-size: var(--font-size-lgi);
   }
-  .project-skills2 {
-    padding-left: var(--padding-xl);
-    padding-right: var(--padding-xl);
-    box-sizing: border-box;
-  }
+
   .contact1 {
     font-size: var(--font-size-5xl);
   }

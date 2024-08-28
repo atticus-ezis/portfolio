@@ -20,5 +20,19 @@ intro_hover_element.addEventListener('mouseleave', function(){
 
 });
 
+// project card animation
+
+
+// const card_hover = document.querySelectorAll('.project-icon')
+// const card_reveal = document.querySelectorAll('.card-type')
+
+// card_hover.forEach((icon, index) => icon.addEventListener('mouseenter', function(){
+//     card_reveal[index].style.top = '100%';
+// }));
+
+// card_hover.forEach((icon, index) => icon.addEventListener('mouseleave', function(){
+//     card_reveal[index].style.top = '-60%';
+// }));
+
 
 
