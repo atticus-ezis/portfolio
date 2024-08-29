@@ -458,11 +458,42 @@ section {
 
 /* projects section */
 
-.projects {
-  flex-shrink: 0;
+
+/* project head */
+
+.projects-wrapper {
+  align-self: stretch;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
 }
+.track-shape {
+  height: 4px;
+  flex: 1;
+  position: relative;
+  border-radius: var(--br-5xs);
+  background-color: var(--background-default-default);
+}
+.track,
+.underline {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.track {
+  flex: 1;
+  padding: var(--padding-9xs) 0 var(--padding-9xs) var(--padding-11xs);
+}
+.underline {
+  width: 94px;
+}
+/* end project head */
+
+/* content */
+
+
 .project-slideshow { 
 
   width: 100%;
@@ -484,6 +515,9 @@ section {
   font-size: var(--font-size-21xl);
   color: #fffcfc;
   font-family: var(--font-lexend-exa);
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /* website icon */
@@ -581,9 +615,6 @@ section {
 .card-template {
   position: relative;
   display: inline-block;
-
-
-
 }
 
 .project-icon {
@@ -624,63 +655,6 @@ section {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.projects1 {
-  text-decoration: none;
-  position: relative;
-  color: inherit;
-}
-.projects-wrapper {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-}
-.track-shape {
-  height: 4px;
-  flex: 1;
-  position: relative;
-  border-radius: var(--br-5xs);
-  background-color: var(--background-default-default);
-}
-.track,
-.underline {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
-.track {
-  flex: 1;
-  padding: var(--padding-9xs) 0 var(--padding-9xs) var(--padding-11xs);
-}
-.underline {
-  width: 94px;
-}
-
-
-
-
-
-
-
 .github {
   align-self: stretch;
   height: 18px;
@@ -715,52 +689,6 @@ section {
 
 
 
-.a-personal-catalog,
-.the-mix {
-  align-self: stretch;
-  position: relative;
-  display: flex;
-  flex-shrink: 0;
-}
-
-.a-personal-catalog {
-  height: 72px;
-  font-weight: 300;
-  color: var(--color-dimgray-100);
-  align-items: center;
-  z-index: 1;
-}
-
-.a-game-designed,
-.eardojoscreen-1-icon {
-  align-self: stretch;
-  position: relative;
-  flex-shrink: 0;
-}
-.eardojoscreen-1-icon {
-  height: 250px;
-  max-width: 100%;
-  overflow: hidden;
-  object-fit: cover;
-}
-
-
-.ear-card {
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  max-width: 100%;
-}
-
-.ear-card {
-  box-shadow: 4px 6px 4px rgba(0, 0, 0, 0.25);
-  border-radius: var(--br-xl);
-  overflow: hidden;
-  flex-direction: column;
-  justify-content: flex-start;
-  padding: 0 0 389px;
-}
-
 .project-cards {
   width: 1342px;
   display: grid;
@@ -771,15 +699,154 @@ section {
   grid-template-columns: repeat(3, minmax(331px, 1fr));
 }
 
+/* end projects section */
+
+
+
+
+
+
+/* contact section */
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 79px 20px 0px;
+  gap: 40px;
+  font-size: var(--font-size-21xl);
+  font-family: var(--font-lexend-exa);
+}
+
+.contact-parent {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-3xs);
+  justify-content: center;
+  align-items: center;
+}
 
 .contact1 {
   margin: 0;
-  align-self: stretch;
-  position: relative;
-  font-size: inherit;
   font-weight: 400;
-  font-family: inherit;
+  text-align: center;
 }
+
+
+.icon-submitform-box {
+ 
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: row;
+  padding: 0 86px 0 450px;
+  width: 100%;
+  position: relative;
+  font-size: var(--single-line-body-base-size);
+  font-family: var(--single-line-body-base);
+}
+
+.form-contact {
+  display: flex;
+  border-radius: var(--radius-200);
+  border: 1px solid var(--border-default-default);
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: var(--padding-3xl) 23px;
+  gap: var(--space-600);
+  min-width: 320px;
+  padding-top: var(--padding-xl);
+
+}
+
+.social-column {
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  gap: 100px;
+}
+
+.column {
+  position: relative;
+  font-family: var(--font-lexend-exa);
+  display: flex;
+  flex-direction: column;
+  gap: 130px;
+  padding-top: 20px;
+  overflow: hidden;
+  width: 100%;
+  
+}
+
+.names {
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 125px;
+}
+
+.social-name-slides {
+  padding: var(--padding-3xs) 0;
+  position: relative;
+}
+
+.social-text {
+  position: relative;
+  /* transform: translateX(-100%); */
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+
+.github-icon3:hover {
+  cursor: pointer;
+} 
+
+
+.social-text.activate {
+  transform: translateX(0%);
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+/* end contact */
+
+
+
+
+
+
+
+
+
+
+.gmail-1-icon {
+  width: 91px;
+  height: 91px;
+  position: relative;
+  object-fit: cover;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .track-shape1 {
   height: 4px;
   flex: 1;
@@ -799,28 +866,15 @@ section {
 }
 .loader {
   align-self: stretch;
-  padding: 0 53px;
+  padding: 0 75px;
 }
-.contact-inner,
-.contact-parent,
+
+
 .loader {
   display: flex;
   align-items: flex-start;
 }
-.contact-parent {
-  width: 200px;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: var(--gap-3xs);
-}
-.contact-inner {
-  width: 1108px;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0 var(--padding-xl);
-  box-sizing: border-box;
-  max-width: 100%;
-}
+
 .want-to-make {
   position: relative;
 }
@@ -987,8 +1041,7 @@ section {
   gap: var(--space-200);
   color: var(--text-brand-on-brand);
 }
-.button-group,
-.form-contact {
+.button-group {
   display: flex;
   justify-content: flex-start;
 }
@@ -999,18 +1052,7 @@ section {
   gap: var(--space-400);
   color: var(--text-neutral-default);
 }
-.form-contact {
-  flex: 0.85;
-  border-radius: var(--radius-200);
-  background-color: var(--background-default-default);
-  border: 1px solid var(--border-default-default);
-  box-sizing: border-box;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: var(--padding-3xl) 23px;
-  gap: var(--space-600);
-  min-width: 320px;
-}
+
 .github-icon3,
 .linkedin-1-icon {
   width: 91px;
@@ -1029,62 +1071,14 @@ section {
   justify-content: flex-start;
   padding: 0 var(--padding-smi) 0 var(--padding-xs);
 }
-.gmail-1-icon {
-  width: 91px;
-  height: 91px;
-  position: relative;
-  object-fit: cover;
-}
-.social-column {
-  margin: 0 !important;
-  position: absolute;
-  top: 0;
-  right: 388px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: 0 var(--padding-4xs);
-  gap: 100px;
-}
-.github3 {
-  margin: 0;
-  align-self: stretch;
-  width: 142px;
-  position: relative;
-  font-size: inherit;
-  font-weight: 200;
-  font-family: inherit;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.social-name-slides {
-  flex: 1;
-  overflow: hidden;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  padding: var(--padding-3xs) 0;
-  box-sizing: border-box;
-  max-width: 100%;
-  z-index: 1;
-}
-.github4,
-.slides,
-.social-name-slides {
+
+
+
+.github4 {
   align-self: stretch;
   display: flex;
 }
-.slides {
-  height: 60px;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-end;
-  padding: 0 var(--padding-11xs) 0 0;
-  box-sizing: border-box;
-  max-width: 100%;
-}
+
 .github4 {
   margin: 0;
   width: 163px;
@@ -1136,77 +1130,15 @@ section {
   max-width: 100%;
   z-index: 1;
 }
-.column,
-.names {
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.names {
-  align-self: stretch;
-  display: flex;
-  align-items: flex-end;
-  gap: 113px;
-  max-width: 100%;
-}
-.column {
-  flex: 1;
-  align-items: flex-start;
-  padding: var(--padding-xl) 0 0;
-  min-width: 210px;
-  text-align: center;
-  font-size: var(--font-size-13xl);
-  color: var(--color-black);
-  font-family: var(--font-lexend-exa);
-}
-.column,
-.contact,
-.icon-submitform-box {
-  max-width: 100%;
-  display: flex;
-  box-sizing: border-box;
-}
-.icon-submitform-box {
-  width: 1108px;
-  flex-direction: row;
-  align-items: flex-start;
-  justify-content: center;
-  padding: 0 86px 0 239px;
-  position: relative;
-  gap: 139.5px;
-  font-size: var(--single-line-body-base-size);
-  color: var(--text-default-default);
-  font-family: var(--single-line-body-base);
-}
-.contact {
-  flex-direction: column;
-  justify-content: flex-start;
-}
-.contact {
-  align-self: stretch;
-  background-color: var(--background-default-default);
-  overflow: hidden;
-  flex-shrink: 0;
-  align-items: center;
-  padding: 79px 0 140px;
-  gap: 40px;
-  text-align: left;
-  font-size: var(--font-size-21xl);
-  color: var(--color-black);
-  font-family: var(--font-lexend-exa);
-}
 
-@media screen and (max-width: 1100px) {
-  .project-cards {
-    justify-content: center;
-    grid-template-columns: repeat(2, minmax(331px, 575px));
-  }
-  .icon-submitform-box {
-    gap: 70px;
-    padding-left: 119px;
-    padding-right: 43px;
-    box-sizing: border-box;
-  }
-}
+
+
+
+
+
+
+
+
 @media screen and (max-width: 1025px) {
   .music,
   .web-development,
@@ -1220,20 +1152,14 @@ section {
   .projects1 {
     font-size: var(--font-size-13xl);
   }
-  .form-contact {
-    flex: 1;
-  }
+
   .github3,
   .github4,
   .github5 {
     font-size: var(--font-size-7xl);
   }
-  .column {
-    flex: 1;
-  }
-  .icon-submitform-box {
-    flex-wrap: wrap;
-  }
+
+
 }
 @media screen and (max-width: 750px) {
   .navbar {
@@ -1262,28 +1188,16 @@ section {
     padding-bottom: var(--padding-234xl);
     box-sizing: border-box;
   }
-  .project-cards {
-    grid-template-columns: minmax(331px, 1fr);
-  }
+
   .projects {
     padding: 58px var(--padding-3xl) 57px;
     box-sizing: border-box;
   }
-  .form-contact {
-    padding-top: var(--padding-xl);
-    padding-bottom: var(--padding-xl);
-    box-sizing: border-box;
-  }
+
   .icon-submitform-box {
     gap: 35px;
     padding-left: 59px;
     padding-right: 21px;
-    box-sizing: border-box;
-  }
-  .contact {
-    gap: var(--gap-xl);
-    padding-top: 51px;
-    padding-bottom: 91px;
     box-sizing: border-box;
   }
 
@@ -1309,20 +1223,13 @@ section {
     padding-right: var(--padding-xl);
     box-sizing: border-box;
   }
-  .projects1 {
-    font-size: var(--font-size-5xl);
-  }
-  .blogs-for-the {
-    font-size: var(--font-size-lgi);
-  }
+
   .project-skills {
     padding-left: var(--padding-xl);
     padding-right: var(--padding-xl);
     box-sizing: border-box;
   }
-  .the-mix {
-    font-size: var(--font-size-lgi);
-  }
+
 
   .contact1 {
     font-size: var(--font-size-5xl);
@@ -1335,9 +1242,7 @@ section {
   .github5 {
     font-size: var(--font-size-lgi);
   }
-  .names {
-    gap: 56px;
-  }
+
   .icon-submitform-box {
     gap: 17px;
     padding-left: var(--padding-xl);

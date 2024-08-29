@@ -20,19 +20,15 @@ intro_hover_element.addEventListener('mouseleave', function(){
 
 });
 
-// project card animation
+const githubIcon = document.querySelector('.github-icon3');
+const socialText = document.querySelector('.social-text');
 
 
-// const card_hover = document.querySelectorAll('.project-icon')
-// const card_reveal = document.querySelectorAll('.card-type')
-
-// card_hover.forEach((icon, index) => icon.addEventListener('mouseenter', function(){
-//     card_reveal[index].style.top = '100%';
-// }));
-
-// card_hover.forEach((icon, index) => icon.addEventListener('mouseleave', function(){
-//     card_reveal[index].style.top = '-60%';
-// }));
-
-
-
+githubIcon.addEventListener('mouseenter', () => {
+    console.log('mousover worked')
+    socialText.classList.add('active'); // Add the active class on hover
+  });
+  
+  githubIcon.addEventListener('mouseleave', () => {
+    socialText.classList.remove('active'); // Remove the active class when no longer hovering
+  });
