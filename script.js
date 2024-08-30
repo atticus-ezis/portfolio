@@ -20,15 +20,16 @@ intro_hover_element.addEventListener('mouseleave', function(){
 
 });
 
-const githubIcon = document.querySelector('.github-icon3');
-const socialText = document.querySelector('.social-text');
+// social contact name slides
+ 
+const icon_hover = document.querySelectorAll(".icon-hover")
+const social_text = document.querySelectorAll(".social-text")
 
-
-githubIcon.addEventListener('mouseenter', () => {
-    console.log('mousover worked')
-    socialText.classList.add('active'); // Add the active class on hover
-  });
-  
-  githubIcon.addEventListener('mouseleave', () => {
-    socialText.classList.remove('active'); // Remove the active class when no longer hovering
-  });
+icon_hover.forEach((icon, index) => {
+    icon.addEventListener('mouseenter', function() {
+        social_text[index].style.transform = "translateX(0%)"
+    });
+    icon.addEventListener('mouseleave', function(){
+        social_text[index].style.transform = 'translateX(-100%)'
+    })
+})

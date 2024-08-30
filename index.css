@@ -739,7 +739,6 @@ section {
   box-sizing: border-box;
   flex-direction: row;
   padding: 0 86px 0 450px;
-  width: 100%;
   position: relative;
   font-size: var(--single-line-body-base-size);
   font-family: var(--single-line-body-base);
@@ -772,7 +771,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 130px;
-  padding-top: 20px;
+  padding-top: 25px;
   overflow: hidden;
   width: 100%;
   
@@ -792,22 +791,15 @@ section {
 
 .social-text {
   position: relative;
-  /* transform: translateX(-100%); */
   margin: 0;
-  transition: transform 0.3s ease;
+  transition: transform 0.6s ease;
 }
 
 
-.github-icon3:hover {
+
+.icon-hover:hover {
   cursor: pointer;
 } 
-
-
-.social-text.activate {
-  transform: translateX(0%);
-  cursor: pointer;
-}
-
 
 
 
