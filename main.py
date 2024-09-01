@@ -17,8 +17,7 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True # encrypt 
 app.config['MAIL_USERNAME'] = 'atticus.ezis@gmail.com'
-app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL-PASSWORD')
-app.config['MAIL_DEFAULT_SENDER'] = ('Your Name', 'your-email@gmail.com')
+app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASSWORD')
 
 mail = Mail(app)
 
@@ -27,18 +26,20 @@ mail = Mail(app)
 def index():
     return render_template('index.html')
 
-# get info from form
+# get info from submitted form when button pushed
 @app.route('/send-email', methods=['POST'])
 def send_email():
     name = request.form['name']
-    email = request.form['sender-email']
+    sender_email = request.form['sender-email']
     message = request.form['message']
 
     # create email message
-    msg = Message(subject=f"Contact Form Submission from {name}",
-                  sender=email,
-                  recipients=['atticus.ezis@gmail.com'])  # Your email address
-    msg.body = f"Name: {name}\nEmail: {email}\n\nMessage:\n{message}"
+    msg = Message(subject=f"Portfolio website Submission from {name}",
+                  sender="mantissmoke@gmail.com",
+                  recipients=['atticus.ezis@gmail.com'])  
+    msg.body = f"Name: {name}\nEmail: {sender_email}\n\nMessage:\n{message}"
+
+    # send message and confirmation response 
     try:
         mail.send(msg)
         flash("Your message has been sent successfully!", 'success')
