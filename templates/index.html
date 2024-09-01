@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="initial-scale=1, width=device-width" />
+
+    <script src="{{url_for('static', filename='js/script.js')}}" defer></script>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/global.css')}}" /> 
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css')}}" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Lexend Exa:wght@200;300;400;600;700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap"
+    />
+  </head>
+
+  <body>
+    
+
+      <!-- menu bar -->
+      <header class="menu-header">
+        <div class="navbar">
+          <!-- leftside -->
+          <div class="home-github">
+            <img
+              class="white-github-2-icon"
+              loading="lazy"
+              alt=""
+              src="{{url_for('static', filename="images/github-menu.png")}}"
+            />
+
+            <a class="atticus-ezis">Atticus Ezis</a>
+          </div>
+
+          <!-- rightside -->
+          <div class="track-list">
+
+            <!-- carousel -->
+            <div class="track-carousel">
+
+              <div class="track-list-button">
+                <a class="track-list-title">Track-List</a>
+                <img
+                  class="arrow-drop-down-icon"
+                  loading="lazy"
+                  alt=""
+                  src="{{ url_for('static', filename='images/track-arrow.png') }}"
+                />
+              </div>
+
+              <div class="tracks">
+                <a class="track" id="intro" href="#intro-section">Intro</a>
+                <a class="track" id="projects" href="#projects-section">Projects</a>
+                <a class="track" id="Contact" href="#contact-section">Contact</a>
+              </div>
+
+            <!-- end carousel -->
+
+            </div>
+
+            <!-- end contents -->
+          </div>
+
+        </div>
+      </header>
+      <!-- end menu bar -->
+
+
+      <!-- hero page -->
+      <section class="navigation" id="hero-page">
+        
+          <div class="record-gif">
+
+            <!-- sliding text on hero-page  -->
+
+            <div class="hero-text-frame">
+
+              <!-- text -->
+              <div class="hover-zone" id="hover1"></div>
+              <div class="text-line" id="line1">
+                <h1 style = "font-size: 84px;">Music</h1>
+              </div>
+
+              <div class="hover-zone" id="hover2"></div>
+              <div class="text-line" id="line2">
+                  <h1 style="font-size: 84px;">& web development</h1>
+              </div>
+
+              <div class="hover-zone" id="hover3"></div>
+              <div class="text-line" id="line3">
+                  <h1 style="font-size: 84px;">fluid architecture</h1>
+              </div>
+
+              <!-- button -->
+              <a class="drop-in-button" href="#intro-section">
+                <div class="drop-in-container">
+                  
+                    <h3 class="drop-in">drop in</h3>
+                    <img
+                      class="chevrons-down-icon"
+                      loading="lazy"
+                      alt="down arrow"
+                      src="{{url_for('static', filename='images/chevrons-down.svg')}}"
+                    />
+                </div>
+              </a>
+              
+
+            </div>
+            <!-- end hero text frame -->  
+
+          </div>
+        
+      </section>
+      <!-- end hero page -->
+
+
+
+
+      <!-- intro page -->
+      <section class="intro" id="intro-section">
+
+        <div class="intro-container">
+
+            <div class="intro-title">
+              <div class="intro-wrapper">
+                <h1 class="intro1">Intro</h1>
+              </div>
+            </div>
+          
+            
+      
+            <div class="intro-card">
+              <div class="intro-text">
+                <div class="im-a-self-taught-container">
+                  <span>
+                    <p class="im-atticus">Hello,</p>
+                    <p class="im-atticus">&nbsp;</p>
+                    <p class="im-atticus">
+                      I'm <strong>Atticus,</strong> I’m a self-taught programmer who’s interested in
+                      web-development. My education is largely project-based, so the
+                      purpose of this site is to document and showcase my journey.
+                    </p>
+                    <p class="im-atticus">&nbsp;</p>
+                    <p class="im-atticus">
+                      I started with <strong>HTML, CSS,</strong> and <strong>JavaScript.</strong> But have since
+                      branched out into frameworks, like <strong>Django</strong>, apps like <strong>Figma</strong>
+                      (used on this site) and <strong>Amazon Web Services.</strong>
+                    </p>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="skillbar">
+              <img src="{{url_for('static', filename='images/skillbar.png')}}" alt="skillbar">
+            </div>
+
+        <!-- end intro-container -->
+        </div>
+      </section>
+      <!-- end intro section -->
+
+
+      <!-- projects section -->
+      <section class="projects" id="projects-section">
+
+        <!-- title -->
+        <div class="projects-wrapper">
+          <a class="projects1">Projects</a>
+        </div>
+        <div class="projects-wrapper">
+          <div class="underline">
+            <div class="track">
+              <div class="track-shape"></div>
+            </div>
+          </div>
+        </div>
+        <!-- end title -->
+
+        <!-- cards -->
+        <div class="project-slideshow">
+          <div class="project-cards">
+
+            <!-- blog card -->
+            <div class="card-template">
+              <img
+                class="project-icon"
+                alt=""
+                src="{{url_for('static', filename="images/blog.png")}}"
+              />
+
+              <!-- bottom-half content -->
+
+              <div class="reveal-container">
+
+                <div class="card-type">
+                  <h3 class="project-header">Blogs for the Criminally Insane</h3>
+
+
+                  <div class="description-container">
+                    
+                      Generic blog site to learn the basics of <strong>Django</strong>. Users
+                      can <strong>login/signup</strong>,
+                      <strong>create</strong>, <strong>edit</strong> and <strong>delete</strong>              
+                      their own posts, as well as <strong>like</strong>, <strong>comment</strong>             
+                      and archive public content into <strong>folders</strong>. 
+                      Configured and hosted through a <strong>virtual server</strong> via 
+                      <strong>Amazon Web Services (AWS)</strong>.
+
+                  </div>
+
+                  <div class="project-skills">
+                    <img
+                      class="placeholder-icon"
+                      alt=""
+                      src="{{url_for('static', filename="images/django.png")}}"
+                    />
+
+                    <img class="larger-icon" alt="" src={{url_for('static', filename='images/AWS.png')}} />
+                  </div>
+
+                  <div class="github-button">
+                    <div class="container">
+                      <img
+                        class="github-icon"
+                        alt=""
+                        src="{{url_for('static', filename='images/github.png')}}"
+                      />
+
+                      <div class="github">GitHub</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+            </div>
+            <!-- end blog card -->
+
+            <!-- lo fi card  -->
+            <div class="card-template">
+
+              <img class="project-icon"
+                alt=""
+                src="{{url_for('static', filename='images/lofi.png')}}"
+              />
+
+              <!-- bottom-half content -->
+
+
+              <div class="reveal-container">
+
+                <div class="card-type">
+                  <h3 class="project-header">The Mix</h3>
+                  <div class="description-container">
+                    A personal catalog for my music. Users can <strong>shuffle</strong>, <strong>like </strong> and
+                    <strong>download</strong> tracks. Live counters are displayed using a
+                    <strong>real-time-database</strong> in <strong>Google Firebase</strong>.
+                  </div>
+
+                  <!-- skill icons -->
+
+                  <div class="project-skills">
+
+                    <img class="larger-icon" src="{{url_for('static', filename='images/javascript.png')}}"/>
+
+                    <img class="larger-icon" src="{{url_for('static', filename='images/html.png')}}"/>
+
+                    <img class="larger-icon" src="{{url_for('static', filename='images/css.png')}}"/>
+
+                    <img class="larger-icon" alt="" src="{{url_for('static', filename='images/firebase.png')}}" />
+                  </div>
+
+                  <!-- end skill icon -->
+
+                  <div class="github-button">
+                    <div class="container">
+                      <img
+                        class="github-icon"
+                        alt=""
+                        src="{{url_for('static', filename='images/github.png')}}"
+                      />
+
+                      <div class="github">GitHub</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+            <!-- end lofi card -->
+
+            <!-- ear card -->
+            <div class="card-template">
+              <img
+                class="project-icon"
+                alt=""
+                src="{{url_for('static', filename="images/eardojo.png")}}"
+              />
+
+              <!-- bottom-half content -->
+
+              <div class="reveal-container"> 
+
+                <div class="card-type">
+                  <h3 class="project-header">The Ear Dojo</h3>
+                  <div class="description-container">
+                    My first website. A game designed to improve interval recognition for musicians.
+                    Users are given 10 questions and if they receive a passing
+                    grade they promote a level. Created logic with <strong>Javascript</strong> and used <strong>Amazon S3</strong> for media storage.
+                  </div>
+                  <div class="project-skills">
+                    <img
+                      class="larger-icon"
+                      alt=""
+                      src="{{url_for('static', filename='images/javascript.png')}}" 
+                    />
+                    <img class="larger-icon" alt="" src="{{url_for('static', filename='images/html.png')}}" />
+
+                    <img class="larger-icon" alt="" src="{{url_for('static', filename='images/css.png')}}" />
+
+                    <img class="larger-icon" alt="" src="{{url_for('static', filename='images/AWS.png')}}" />
+
+                  </div>
+                  <div class="github-button">
+                    <div class="container">
+                      <img
+                        class="github-icon"
+                        alt=""
+                        src="{{url_for('static', filename='images/github.png')}}" 
+                      />
+
+                      <div class="github">GitHub</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>  
+            </div>
+            <!-- end ear card -->
+          </div>
+        </div>
+      </section>
+      <!-- end projects -->
+
+
+      <!-- contact section -->
+      <section class="contact" id="contact-section">
+
+          <div class="contact-parent">
+            <h1 class="contact1">Contact</h1>
+            <div class="loader">
+              <div class="linear-indeterminate">
+                <div class="track">
+                  <div class="track-shape1"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+        <div class="want-to-make-something-new-le-wrapper">
+          <div class="want-to-make">
+            Want to make something new? Lets get in touch
+          </div>
+        </div>
+
+        <div class="icon-submitform-box">
+
+          <!-- contact form -->
+          <form action="/send-email"class="form-contact" method='POST'> 
+            
+            <!-- name -->
+            <div class="input-field">
+
+              <div class="label">Name</div>
+            
+                  <input id="name" class="input" type="text" name="name" style="font-size: 16px;" placeholder="Enter your name"></input>
+
+            </div>
+            <!-- end name-->
+
+
+            <!-- email -->
+        
+            <div class="input-field">
+
+              <div class="label">Email</div>
+
+                <input id="sender-email" class="input" type="text" name="sender-email" style="font-size: 16px;" placeholder="Enter your email"></input>
+
+            </div>
+            <!-- end email -->
+
+            <!-- text field -->
+
+            <div class="textarea-field">
+
+              <div class="label3">Message</div>
+              
+              <textarea id="message" class="textarea" type="text" name="message" style="font-size: 16px;" placeholder="Enter message"></textarea>
+
+            </div>
+
+            <!-- end text field -->
+            
+            <!-- button -->
+            <div class="button-group"> 
+
+              <button type="submit" class="button2" style="cursor: pointer;">    
+                <div class="button3">Submit</div>
+              </button>
+
+            </div>
+
+            <!-- end button -->
+
+            <!-- end contact-form -->
+
+          </form>
+
+          
+
+          <!-- social column -->
+
+          <div class="social-column">
+
+            <div class="icon-hover">
+              <img class="github-icon3" alt="" src="{{url_for('static', filename="images/social-github.png")}}" />
+            </div>
+
+            <div class="icon-hover">
+                  <div class="container3">
+                    <img
+                      class="linkedin-1-icon"
+                      alt=""
+                      src="{{url_for('static', filename="images/social-linkedin.png")}}"
+                    />
+                  </div>
+            </div>
+
+            <div class="icon-hover">
+              <img class="gmail-1-icon" alt="" src="{{url_for('static', filename="images/social-gmail.png")}}" />
+            </div>
+
+          </div>
+
+          <!-- social-names appear -->
+
+          <div class="column">
+            <div class="names">
+
+              <div class="social-name-slides">
+                <h1 class="social-text">GitHub</h1>
+              </div>
+
+              <!-- github-wrapper -->
+               <!-- github4 -->
+              <div class="social-name-slides">
+                <h1 class="social-text">LinkedIn</h1>
+              </div>
+
+              <!-- github-container -->
+               <!-- github5 -->
+              <div class="social-name-slides">
+                <h1 class="social-text">atticus.ezis@gmail.com</h1>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- end contact section -->
+    
+
+  </body>
+</html>
