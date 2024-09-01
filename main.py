@@ -1,7 +1,11 @@
 # import dependencies 
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_mail import Mail, Message
+
+# Create environment variables to hide password
 import os
+from dotenv import load_dotenv
+load_dotenv()
 
 
 
@@ -13,7 +17,7 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True # encrypt 
 app.config['MAIL_USERNAME'] = 'atticus.ezis@gmail.com'
-app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL-PASSWORD')
 app.config['MAIL_DEFAULT_SENDER'] = ('Your Name', 'your-email@gmail.com')
 
 mail = Mail(app)

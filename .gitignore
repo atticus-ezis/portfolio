@@ -4,6 +4,9 @@
 Thumbs.db # Windows image file cache
 Desktop.ini # Windows desktop icon settings
 
+#Environment Variables
+.env 
+
 # Editor directories and files
 .vscode/   # Visual Studio Code settings
 .idea/   # IntelliJ IDEA settings
