@@ -42,7 +42,7 @@ def send_email():
     # send message and confirmation response 
     try:
         mail.send(msg)
-        flash("Your message has been sent successfully!", 'success')
+        flash("Your Email has been sent, you'll hear from me soon!", 'success')
     except Exception as e:
         flash(f'An error occured while sending the email: {str(e)}', 'danger')
 

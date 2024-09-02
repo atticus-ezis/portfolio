@@ -72,6 +72,7 @@
 
       <!-- hero page -->
       <section class="navigation" id="hero-page">
+
         
           <div class="record-gif">
 
@@ -474,18 +475,19 @@
             </div>
           </div>
         </div>
-
-              <!-- Flash Messages -->
-          {% with messages = get_flashed_messages(with_categories=true) %}
-          {% if messages %}
-            <ul>
-              {% for category, message in messages %}
-                <li class="{{ category }}">{{ message }}</li>
-              {% endfor %}
-            </ul>
-          {% endif %}
-        {% endwith %}
-                <!-- end flash messages -->
+        
+                <!-- Flash Messages -->
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                  <ul>
+                    {% for category, message in messages %}
+                      <li class="{{ category }}">{{ message }}</li> <!-- class is success or danger -->
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              {% endwith %}
+              <!-- end flash messages -->
+             
       </section>
       <!-- end contact section -->
     
