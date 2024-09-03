@@ -774,6 +774,7 @@ section {
   justify-content: flex-start;
   padding: var(--space-300) 14px 6px var(--space-400);
   min-width: 240px;
+  max-width: 250px;
   min-height: 80px;
   color: var(--icon-default-tertiary);
 }
@@ -827,7 +828,36 @@ section {
 
 
 
+/* flash message styling */
 
+ul {
+  list-style-type: none; 
+  margin: 0;            
+  padding: 0; 
+
+}
+
+.success {
+  color: #155724;
+  background-color: #d8fae0;
+  border-color: #c3e6cb;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  font-size: 16px;
+}
 
 
 
@@ -885,7 +915,7 @@ section {
 }
 .loader {
   align-self: stretch;
-  padding: 0 75px;
+  padding: 0 20%;
 }
 
 

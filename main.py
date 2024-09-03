@@ -16,8 +16,9 @@ app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com' 
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True # encrypt 
-app.config['MAIL_USERNAME'] = 'atticus.ezis@gmail.com'
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASSWORD')
+app.secret_key = os.environ.get('SECRET_KEY')
 
 mail = Mail(app)
 
@@ -35,7 +36,7 @@ def send_email():
 
     # create email message
     msg = Message(subject=f"Portfolio website Submission from {name}",
-                  sender="mantissmoke@gmail.com",
+                  sender= os.environ.get('MAIL_USERNAME'),
                   recipients=['atticus.ezis@gmail.com'])  
     msg.body = f"Name: {name}\nEmail: {sender_email}\n\nMessage:\n{message}"
 
@@ -44,13 +45,10 @@ def send_email():
         mail.send(msg)
         flash("Your Email has been sent, you'll hear from me soon!", 'success')
     except Exception as e:
-        flash(f'An error occured while sending the email: {str(e)}', 'danger')
+        flash(f'An error occured while sending the email: {str(e)}, please use the gmail button instead', 'danger')
 
-    return redirect(url_for('index'))
-
-
+    return redirect(url_for('index') + '#contact-section')
 
 # run app in developer mode so assign debug to True
 if __name__ == '__main__':
-    app.secret_key = os.environ.get('SECRET_KEY')
     app.run(debug=True)
