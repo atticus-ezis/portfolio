@@ -27,7 +27,7 @@ mail = Mail(app)
 def index():
     return render_template('index.html')
 
-# get info from submitted form when button pushed
+# create function when submit button is pressed
 @app.route('/send-email', methods=['POST'])
 def send_email():
     name = request.form['name']
@@ -45,7 +45,7 @@ def send_email():
         mail.send(msg)
         flash("Your Email has been sent, you'll hear from me soon!", 'success')
     except Exception as e:
-        flash(f'An error occured while sending the email: {str(e)}, please use the gmail button instead', 'danger')
+        flash(f'An error occured, please use the gmail button instead', 'danger')
 
     return redirect(url_for('index') + '#contact-section')
 

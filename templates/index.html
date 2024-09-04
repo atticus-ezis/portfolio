@@ -26,14 +26,18 @@
         <div class="navbar">
           <!-- leftside -->
           <div class="home-github">
-            <img
-              class="white-github-2-icon"
-              loading="lazy"
-              alt=""
-              src="{{url_for('static', filename="images/github-menu.png")}}"
-            />
 
-            <a class="atticus-ezis">Atticus Ezis</a>
+            <a href="https://github.com/atticus-ezis" target="_blank">
+              <img
+                class="white-github-2-icon"
+                link="https://github.com/atticus-ezis"
+                loading="lazy"
+                alt=""
+                src="{{url_for('static', filename="images/github-menu.png")}}"
+              />
+            </a>
+
+            <a class="atticus-ezis" href="https://www.linkedin.com/in/atticusezis/" target="_blank">Atticus Ezis</a>
           </div>
 
           <!-- rightside -->
@@ -121,8 +125,8 @@
 
 
 
-
-      <!-- intro page -->
+    
+       <!-- intro page -->
       <section class="intro" id="intro-section">
 
         <div class="intro-container">
@@ -158,7 +162,7 @@
             </div>
 
             <div class="skillbar">
-              <img src="{{url_for('static', filename='images/skillbar.png')}}" alt="skillbar">
+              <img src="{{url_for('static', filename='images/white-skillbar.png')}}" alt="skillbar">
             </div>
 
         <!-- end intro-container -->
@@ -461,35 +465,40 @@
               <img class="gmail-1-icon" alt="" src="{{url_for('static', filename="images/social-gmail.png")}}" />
             </div>
 
+                <!--column -->
+                <div class="column">
+                  <div class="names">
+      
+                    <div class="social-name-slides">
+                      <h1 class="social-text">GitHub</h1>
+                    </div>
+      
+                    <!-- github-wrapper -->
+                    <!-- github4 -->
+                    <div class="social-name-slides">
+                      <h1 class="social-text">LinkedIn</h1>
+                    </div>
+      
+                    <!-- github-container -->
+                    <!-- github5 -->
+                    <div class="social-name-slides">
+                      <h1 class="social-text">atticus.ezis@gmail.com</h1>
+                    </div>
+                    
+                  </div>
+                </div>
+                <!-- column end -->
+
           </div>
 
           <!-- social-names appear -->
 
-          <div class="column">
-            <div class="names">
+          
 
-              <div class="social-name-slides">
-                <h1 class="social-text">GitHub</h1>
-              </div>
-
-              <!-- github-wrapper -->
-               <!-- github4 -->
-              <div class="social-name-slides">
-                <h1 class="social-text">LinkedIn</h1>
-              </div>
-
-              <!-- github-container -->
-               <!-- github5 -->
-              <div class="social-name-slides">
-                <h1 class="social-text">atticus.ezis@gmail.com</h1>
-              </div>
-              
-            </div>
-          </div>
         </div>
               
       </section>
-      <!-- end contact section -->
+      <!-- end contact section --> 
     
 
   </body>

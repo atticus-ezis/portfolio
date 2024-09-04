@@ -56,7 +56,6 @@
 }
 
 .atticus-ezis {
-  position: relative;
   display: inline-block;
   cursor: pointer;
   text-decoration: none;
@@ -175,6 +174,7 @@
 
 
 
+
 .navigation {
   height: 100vh;
   flex-shrink: 0;
@@ -188,6 +188,7 @@
 section {
   height: 100vh; /* Full viewport height */
   box-sizing: border-box;
+ 
 }
 
 /* hero section */
@@ -387,6 +388,7 @@ section {
   color: var(--background-default-default);
   opacity: 0;
   transition: opacity 1s ease-in-out, left 1s ease-in-out;
+  z-index: 1;
 }
 
 .skillbar img {
@@ -501,13 +503,14 @@ section {
   place-items: center;
   font-size: var(--font-size-sm);
   color: var(--color-dimgray-200);
+  overflow-x: hidden;
 }
 
 .projects {
   height: 100vh;
   align-self: stretch;
   background-color: #288cca;
-  overflow-y: auto;
+  
   padding: 90px 44px 88px;
   box-sizing: border-box;
   gap: var(--gap-3xs);
@@ -613,6 +616,8 @@ section {
 /* animate card */
 
 .card-template {
+  min-width: 331px;
+  flex: 00 auto;
   position: relative;
   display: inline-block;
 }
@@ -690,13 +695,17 @@ section {
 
 
 .project-cards {
-  width: 1342px;
-  display: grid;
-  flex-direction: row;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-wrap: nowrap;
+  gap: var(--gap-3xs);
   padding: 0;
   box-sizing: border-box;
-  gap: var(--gap-3xs);
-  grid-template-columns: repeat(3, minmax(331px, 1fr));
+  max-width: 100%;
+  position: relative;
+  height: 700px;
+ 
 }
 
 /* end projects section */
@@ -733,18 +742,25 @@ section {
 }
 
 
+
+
+
+/* contact form  */
+
 .icon-submitform-box {
- 
   display: flex;
-  box-sizing: border-box;
   flex-direction: row;
-  padding: 0 86px 0 450px;
+  align-items: center;
+  justify-content: center;
+
   position: relative;
   font-size: var(--single-line-body-base-size);
   font-family: var(--single-line-body-base);
+  box-sizing: border-box;
+  width: 100vw; 
+  overflow: hidden;
+  
 }
-
-/* contact form  */
 
 .form-contact {
   display: flex;
@@ -757,6 +773,31 @@ section {
   min-width: 320px;
   padding-top: var(--padding-xl);
 
+}
+
+.social-column {
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  padding-left: 10px;
+  gap: 100px;
+  position: relative;
+  
+}
+
+
+.column {
+  position: absolute;
+  font-family: var(--font-lexend-exa);
+  display: flex;
+  flex-direction: column;
+  gap: 130px;
+  padding-top: 25px;
+  left: auto;
+  right:0;
+  transform: translateX(100%);
+  overflow-x: hidden;
+  max-width: calc(100vw - 20px);
 }
 
 .textarea {
@@ -781,25 +822,10 @@ section {
 
 /* end contact form */
 
-.social-column {
-  top: 0;
-  display: flex;
-  flex-direction: column;
-  padding-left: 10px;
-  gap: 100px;
-}
 
-.column {
-  position: relative;
-  font-family: var(--font-lexend-exa);
-  display: flex;
-  flex-direction: column;
-  gap: 130px;
-  padding-top: 25px;
-  overflow: hidden;
-  width: 100%;
-  
-}
+
+
+
 
 .names {
   top: 0;
@@ -811,6 +837,9 @@ section {
 .social-name-slides {
   padding: var(--padding-3xs) 0;
   position: relative;
+  max-width: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .social-text {
@@ -834,7 +863,6 @@ ul {
   list-style-type: none; 
   margin: 0;            
   padding: 0; 
-
 }
 
 .success {
@@ -1227,12 +1255,7 @@ ul {
     box-sizing: border-box;
   }
 
-  .icon-submitform-box {
-    gap: 35px;
-    padding-left: 59px;
-    padding-right: 21px;
-    box-sizing: border-box;
-  }
+
 
 }
 @media screen and (max-width: 450px) {
@@ -1276,9 +1299,5 @@ ul {
     font-size: var(--font-size-lgi);
   }
 
-  .icon-submitform-box {
-    gap: 17px;
-    padding-left: var(--padding-xl);
-    box-sizing: border-box;
-  }
+
 }
