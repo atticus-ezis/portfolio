@@ -343,6 +343,7 @@ section {
 /* intro section */
 
 .intro {
+  padding-top: 90px;
   height: 100vh;
   align-self: stretch;
   overflow: hidden;
@@ -1223,9 +1224,7 @@ ul {
 
 }
 @media screen and (max-width: 750px) {
-  .navbar {
-    flex-wrap: wrap;
-  }
+ 
   .navigation {
     height: auto;
     min-height: 900;
