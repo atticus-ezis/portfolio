@@ -16,7 +16,7 @@ app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com' 
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True # encrypt 
-app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME') #changed app.config['MAIL_USERNAME']
 app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASSWORD')
 app.secret_key = os.environ.get('SECRET_KEY')
 
@@ -35,8 +35,7 @@ def send_email():
     message = request.form['message']
 
     # create email message
-    msg = Message(subject=f"Portfolio website Submission from {name}",
-                  sender= os.environ.get('MAIL_USERNAME'),
+    msg = Message(subject=f"Portfolio website Submission from {name}", # removed sender = os.environ.get('MAIL_USERNAME')
                   recipients=['atticus.ezis@gmail.com'])  
     msg.body = f"Name: {name}\nEmail: {sender_email}\n\nMessage:\n{message}"
 
@@ -51,4 +50,5 @@ def send_email():
 
 # run app in developer mode so assign debug to True
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
+  # app.run(host='0.0.0.0', port=8000)
