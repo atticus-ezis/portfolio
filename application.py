@@ -16,6 +16,7 @@ app = Flask(__name__)
 app.config['MAIL_SERVER'] = 'smtp.gmail.com' 
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True # encrypt 
+app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
 app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME') #changed app.config['MAIL_USERNAME']
 app.config['MAIL_PASSWORD'] = os.environ.get('EMAIL_PASSWORD')
 app.secret_key = os.environ.get('SECRET_KEY')
@@ -44,7 +45,7 @@ def send_email():
         mail.send(msg)
         flash("Your Email has been sent, you'll hear from me soon!", 'success')
     except Exception as e:
-        flash(f'An error occured, please use the gmail button instead', 'danger')
+        flash(f'An error occured {e}, please use the gmail button instead', 'danger')
 
     return redirect(url_for('index') + '#contact-section')
 
